@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores</title>
+    <script>
+        function cadastroProf() {
+            let vetor = [];
+            let InputRegistroFuncional = document.getElementById("registrof");
+            let InputNomeCompleto = document.getElementById("nomec");
+            let InputDataNascimento = document.getElementById("datanasc");
+            let InputSexo = document.getElementsByName("sexo");
+            let InputAreaPesquisa = document.getElementById("areap");
+            let InputUniversidade = document.getElementById("areap");
+            let InputEmail = document.getElementById("email");
+            let InputTelefone = document.getElementById("telefone");
+
+            let objeto = {
+                RegistroFuncional: InputRegistroFuncional.value,
+                NomeCompleto: InputNomeCompleto.value,
+                DataDeNascimento: InputDataNascimento.value,
+                Sexo: InputSexo.value,
+                AreaPesquisa: InputAreaPesquisa.value,
+                Universidade: InputUniversidade.value,
+                Email: InputEmail.value,
+                Telefone: InputTelefone.value
+            };
+            
+            vetor[0] = objeto;
+            document.getElementById("testeArray").innerHTML = 
+                                    "Registro Funcional: " + vetor[0].RegistroFuncional +
+                                    "<br>Nome Completo: " + vetor[0].NomeCompleto +
+                                    "<br>Data de Nascimento: " + vetor[0].DataDeNascimento +
+                                    "<br>Sexo: " + vetor[0].Sexo +
+                                    "<br>Área de Pesquisa: " + vetor[0].AreaPesquisa + 
+                                    "<br>Universidade: " + vetor[0].Universidade +
+                                    "<br>Email: " + vetor[0].Email +
+                                    "<br>Telefone: " + vetor[0].Telefone;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Página de Professores</h1>
+    <p>Bem vindo! Faça seu cadastro abaixo.</p>
+    <form name="searchfield" method="get">
+        <label for="registrof">Registro Funcional:</label>
+        <input type="text" id="registrof" name="registrof" required><br><br>
+        <label for="nomec">Nome completo:</label>
+        <input type="text" id="nomec" name="nomec" required><br><br>
+        <label for="datanasc">Data de nascimento:</label>
+        <input type="date" id="datanasc" name="datanasc" required><br><br>
+        <label for="sexo">Sexo</label>
+        <input type="text" id="sexo" name="sexo" required><br><br>
+        <label for="areap">Areá de Pesquisa:</label>
+        <input type="text" id="areap" name="areap" required><br><br>
+        <label for="universi">Universidade de Formação:</label>
+        <input type="text" id="universi" name="universi" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label type="telefone">Telefone:</label>
+        <input type="number" id="telefone" name="telefone" minlength="10" maxlength="11" required>
+    </form>
+    <button onclick="cadastroProf()">Cadastrar Professor</button>
+    <button onclick="showProf()">Mostrar Professor</button>
+    <p id="testeArray"></p>
+</body>
+</html>
